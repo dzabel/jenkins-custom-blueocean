@@ -5,8 +5,8 @@ export default class Logo extends Component {
     render() {
         // return the component
         return (<a className="MasterLogo BlueOceanLogo MyLogo">
-            <Icon icon="favorite" size={50} />
-            CoreMedia AG</a>);
+            <Icon icon="cloud_queue" size={50} />
+            Blueprint CI</a>);
     }
 }
 Logo.propTypes = {

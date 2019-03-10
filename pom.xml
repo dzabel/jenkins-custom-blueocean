@@ -9,7 +9,7 @@
     <relativePath />
   </parent>
   <groupId>com.coremedia.blueprint.ci.blueocean.theme</groupId>
-  <artifactId>CoreMedia-Theme</artifactId>
+  <artifactId>coremedia-theme</artifactId>
   <version>0.0.2-SNAPSHOT</version>
   <packaging>hpi</packaging>
 
