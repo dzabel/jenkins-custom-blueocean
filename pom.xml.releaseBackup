@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.jenkins-ci.plugins</groupId>
+    <artifactId>plugin</artifactId>
+    <version>2.37</version>
+    <relativePath />
+  </parent>
+  <groupId>com.coremedia.blueprint.ci.blueocean.theme</groupId>
+  <artifactId>coremedia-theme</artifactId>
+  <version>0.0.4-SNAPSHOT</version>
+  <packaging>hpi</packaging>
+
+  <properties>
+    <!-- Baseline Jenkins version you use to build the plugin. Users must have this version or newer to run. -->
+    <jenkins.version>2.138.1</jenkins.version>
+    <blueocean.version>1.8.2</blueocean.version>
+
+    <!-- Node and NPM versions. -->
+    <node.version>6.4.0</node.version>
+    <npm.version>3.10.8</npm.version>
+
+    <!-- Java Level to use. Java 7 required when using core >= 1.612 -->
+    <java.level>8</java.level>
+    <!-- stop initialize phase plugins executing twice -->
+    <javadoc.exec.goal>javadoc-no-fork</javadoc.exec.goal>
+  </properties>
+
+  <name>CoreMedia BlueOcean Customizing plugin </name>
+  <description>Used in CoreMedia blueprint-ci</description>
+  <url>https://github.com/dzabel/jenkins-custom-blueocean</url>
+  <scm>
+    <developerConnection>scm:git:https://github.com/dzabel/jenkins-custom-blueocean</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+  <!-- The default licence for Jenkins OSS Plugins is MIT. Substitute for the applicable one if needed. -->
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://opensource.org/licenses/MIT</url>
+    </license>
+  </licenses>
+  <repositories>
+    <repository>
+      <id>repo.jenkins-ci.org</id>
+      <url>https://repo.jenkins-ci.org/public/</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>repo.jenkins-ci.org</id>
+      <url>https://repo.jenkins-ci.org/public/</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.jenkins.blueocean</groupId>
+      <artifactId>blueocean</artifactId>
+      <version>${blueocean.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.jenkins.blueocean</groupId>
+      <artifactId>blueocean-core-js</artifactId>
+      <version>${blueocean.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.jenkins.blueocean</groupId>
+      <artifactId>jenkins-design-language</artifactId>
+      <version>${blueocean.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.jenkins.blueocean</groupId>
+      <artifactId>blueocean-pipeline-api-impl</artifactId>
+      <version>${blueocean.version}</version>
+    </dependency>
+
+    <!--Require upper bound dependencies errors workaround -->
+    <dependency>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>structs</artifactId>
+      <version>1.14</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>script-security</artifactId>
+      <version>1.42</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jenkins-ci.plugins.workflow</groupId>
+      <artifactId>workflow-scm-step</artifactId>
+      <version>2.6</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jenkins-ci.plugins.workflow</groupId>
+      <artifactId>workflow-step-api</artifactId>
+      <version>2.16</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.7</version>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Disable InjectedTest -->
+      <plugin>
+        <groupId>org.jenkins-ci.tools</groupId>
+        <artifactId>maven-hpi-plugin</artifactId>
+        <configuration>
+          <disabledTestInjection>true</disabledTestInjection>
+          <defaultPort>8081</defaultPort>
+        </configuration>
+      </plugin>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-release-plugin</artifactId>
+      <version>2.5.3</version>
+      <configuration>
+        <tagNameFormat>v@{project.version}</tagNameFormat>
+      </configuration>
+    </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>website-execution</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.github.eirslett</groupId>
+            <artifactId>frontend-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <phase>install</phase>
+                <id>npm-run-build-storybook</id>
+                <goals>
+                  <goal>npm</goal>
+                </goals>
+                <configuration>
+                  <arguments>run build-storybook</arguments>
+                  <failOnError>true</failOnError>
+                  <testFailureIgnore>false</testFailureIgnore>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+</project>
