@@ -10,7 +10,7 @@
   </parent>
   <groupId>com.coremedia.blueprint.ci.blueocean.theme</groupId>
   <artifactId>coremedia-theme</artifactId>
-  <version>0.0.6</version>
+  <version>0.0.7-SNAPSHOT</version>
   <packaging>hpi</packaging>
 
   <properties>
@@ -33,7 +33,7 @@
   <url>https://github.com/dzabel/jenkins-custom-blueocean</url>
   <scm>
     <developerConnection>scm:git:https://github.com/dzabel/jenkins-custom-blueocean</developerConnection>
-    <tag>v0.0.6</tag>
+    <tag>HEAD</tag>
   </scm>
   <!-- The default licence for Jenkins OSS Plugins is MIT. Substitute for the applicable one if needed. -->
 
