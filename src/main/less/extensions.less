@@ -35,7 +35,6 @@ body {
 
 .BasicHeader--default {
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
-  background-color: #607d8b !important;
   text-transform: uppercase;
   right: 0;
   left: 0;
@@ -56,4 +55,58 @@ body {
 div.jenkins-header-logo {
   right: 10px;
   position: absolute;
+}
+
+// adjust colors
+.BasicHeader--default {
+  background: #607d8b !important;
+}
+
+.Dialog--input .Dialog-header {
+  background: #607d8b !important;
+}
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  background-image: -webkit-linear-gradient(top, #607d8b 0%, #2d588a 100%) !important;
+  background-image: -o-linear-gradient(top, #607d8b 0%, #2d588a 100%) !important;
+  background-image: linear-gradient(to bottom, #607d8b 0%, #2d588a 100%) !important;
+  background-color: #2d588a !important;
+}
+@media (max-width: 767px) {
+  .navbar .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar .navbar-nav .open .dropdown-menu > .active > a:focus {
+    background-image: -webkit-linear-gradient(top, #607d8b 0%, #2d588a 100%) !important;
+    background-image: -o-linear-gradient(top, #607d8b 0%, #2d588a 100%) !important;
+    background-image: linear-gradient(to bottom, #607d8b 0%, #2d588a 100%) !important;
+  }
+}
+.progress-bar {
+  background-image: -webkit-linear-gradient(top, #607d8b 0%, #2d588a 100%) !important;
+  background-image: -o-linear-gradient(top, #607d8b 0%, #2d588a 100%) !important;
+  background-image: linear-gradient(to bottom, #607d8b 0%, #2d588a 100%) !important;
+}
+
+.list-group-item.active,
+.list-group-item.active:hover,
+.list-group-item.active:focus {
+  text-shadow: 0 -1px 0 #2d588a !important;
+  background-image: -webkit-linear-gradient(top, #607d8b 0%, #2d588a 100%) !important;
+  background-image: -o-linear-gradient(top, #607d8b 0%, #2d588a 100%) !important;
+  background-image: linear-gradient(to bottom, #607d8b 0%, #2d588a 100%) !important;
+  border-color: #2d588a !important;
+}
+
+.panel-primary > .panel-heading {
+  background-color: #607d8b !important;
+  background-image: -webkit-linear-gradient(top, #607d8b 0%, #2d588a 100%) !important;
+  background-image: -o-linear-gradient(top, #607d8b 0%, #2d588a 100%) !important;
+  background-image: linear-gradient(to bottom, #607d8b 0%, #2d588a 100%) !important;
+
+}
+
+button, .btn, .btn-default, .btn-primary {
+  border: solid 1px #607d8b !important;
+  background-color: #607d8b !important;
 }
