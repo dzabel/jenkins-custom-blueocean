@@ -30,9 +30,9 @@
 
   <name>CoreMedia BlueOcean Customizing plugin </name>
   <description>Used in CoreMedia blueprint-ci</description>
-  <url>https://github.com/dzabel/jenkins-custom-blueocean</url>
+  <url>https://github.com/coremedia-contributions/coremedia-blueprint-ci</url>
   <scm>
-    <developerConnection>scm:git:https://github.com/dzabel/jenkins-custom-blueocean</developerConnection>
+    <developerConnection>scm:git:https://github.com/coremedia-contributions/coremedia-blueprint-ci</developerConnection>
     <tag>HEAD</tag>
   </scm>
   <!-- The default licence for Jenkins OSS Plugins is MIT. Substitute for the applicable one if needed. -->
