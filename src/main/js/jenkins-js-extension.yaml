@@ -13,3 +13,4 @@
 extensions:
   - component: Logo
     extensionPoint: jenkins.header.logo
+  - component: FavIcon
