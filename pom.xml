@@ -16,7 +16,7 @@
   <properties>
     <!-- Baseline Jenkins version you use to build the plugin. Users must have this version or newer to run. -->
     <jenkins.version>2.138.1</jenkins.version>
-    <blueocean.version>1.8.2</blueocean.version>
+    <blueocean.version>1.23.3</blueocean.version>
 
     <!-- Node and NPM versions. -->
     <node.version>6.16.0</node.version>
